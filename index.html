@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR ALONE | UNBAN TOOL</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#111;
+    transition:0.4s;
+}
+
+.toggle{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:24px;
+    cursor:pointer;
+    color:#fff;
+}
+
+.container{
+    width:95%;
+    max-width:600px;
+    margin:70px auto;
+    padding:30px;
+    border-radius:25px;
+    background:#1b1b1b;
+    box-shadow: 10px 10px 20px #0a0a0a,
+                -10px -10px 20px #2a2a2a;
+    color:#fff;
+    text-align:center;
+}
+
+h1{margin:0;font-size:24px;}
+h2{margin:5px 0 20px;font-size:16px;opacity:0.7;}
+
+input,select,textarea{
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:#1b1b1b;
+    color:#fff;
+    font-size:15px;
+    box-shadow: inset 6px 6px 12px #0a0a0a,
+                inset -6px -6px 12px #2a2a2a;
+}
+
+textarea{
+    min-height:260px;
+    font-size:17px;
+    font-weight:bold;
+    line-height:1.6;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:15px;
+    font-weight:bold;
+    cursor:pointer;
+    background:#1b1b1b;
+    color:#fff;
+    box-shadow: 6px 6px 12px #0a0a0a,
+                -6px -6px 12px #2a2a2a;
+}
+
+button:active{
+    box-shadow: inset 6px 6px 12px #0a0a0a,
+                inset -6px -6px 12px #2a2a2a;
+}
+
+.whatsapp-btn{
+    background:#25D366;
+    color:#fff;
+    box-shadow:none;
+}
+
+.light{background:#f1f1f1;}
+.light .container{
+    background:#f1f1f1;
+    color:#000;
+    box-shadow: 10px 10px 20px #cfcfcf,
+                -10px -10px 20px #ffffff;
+}
+.light input,.light select,.light textarea,.light button{
+    background:#f1f1f1;
+    color:#000;
+    box-shadow: inset 6px 6px 12px #cfcfcf,
+                inset -6px -6px 12px #ffffff;
+}
+.light .toggle{color:#000;}
+</style>
+</head>
+
+<body>
+
+<div class="toggle" onclick="toggleMode()">🌙</div>
+
+<div class="container">
+<h1>MR ALONE</h1>
+<h2>WHATSAPP UNBAN TOOL</h2>
+
+<input type="text" id="number" placeholder="Enter WhatsApp Number+923********">
+
+<select id="template">
+<option value="1">Appeal 1 - Legal Formal</option>
+<option value="2">Appeal 2 - Business Impact</option>
+<option value="3">Appeal 3 - Account Compromise</option>
+<option value="4">Appeal 4 - Emotional Professional</option>
+<option value="5">Appeal 5 - Compliance Commitment</option>
+<option value="6">Appeal 6 - Manual Review</option>
+<option value="7">Appeal 7 - First Time Issue</option>
+<option value="8">Appeal 8 - Urgent Request</option>
+<option value="9">Appeal 9 - Detailed Respectful</option>
+<option value="10">Appeal 10 - Final Strong Appeal</option>
+</select>
+
+<button onclick="generateAppeal()">Generate Heavy Appeal</button>
+
+<textarea id="result" placeholder="Generated appeal will appear here..."></textarea>
+
+<button onclick="sendMail()">Send via Gmail App</button>
+
+<hr style="margin:20px 0; opacity:0.3;">
+
+<button class="whatsapp-btn" onclick="openChannel1()">Join WhatsApp Channel 1</button>
+<button class="whatsapp-btn" onclick="openChannel2()">Join WhatsApp Channel 2</button>
+
+</div>
+
+<script>
+
+function generateAppeal(){
+let num=document.getElementById("number").value;
+
+let appeals={
+1:`Dear WhatsApp Support Team,
+
+I formally request a comprehensive review of the suspension placed on my account associated with the number ${num}. I strongly believe this action may have resulted from a misunderstanding or automated system error.
+
+I have always respected WhatsApp’s Terms of Service and Community Guidelines and have never intentionally engaged in spam, bulk messaging, or policy violations.
+
+This number is critical for my daily communication and professional responsibilities. I respectfully request a manual review and reinstatement.
+
+Sincerely,
+Account Holder
+Number: ${num}`,
+
+2:`Dear Support,
+
+The suspension of my number ${num} has significantly impacted my business and professional communication. I assure you that no intentional violation occurred.
+
+Kindly conduct a detailed manual investigation and restore my account.`,
+
+3:`Dear WhatsApp Team,
+
+I suspect my account ${num} may have been compromised, which possibly triggered the restriction. I assure you I did not intentionally violate any policy.
+
+I request assistance and reinstatement after review.`,
+
+4:`Respected Authority,
+
+My account ${num} is my primary communication tool. I humbly request reconsideration and a fair manual review.
+
+If any violation occurred unintentionally, I sincerely apologize.`,
+
+5:`Dear Team,
+
+I fully commit to complying with all policies in the future. If any unintended mistake occurred with ${num}, I deeply regret it and request reinstatement.`,
+
+6:`Dear Review Team,
+
+Automated systems may sometimes incorrectly flag accounts. I request a manual review of ${num} and reconsideration.`,
+
+7:`Dear Support,
+
+This is my first issue regarding ${num}. I have been a loyal user and respectfully request restoration.`,
+
+8:`Dear WhatsApp Support,
+
+The restriction on ${num} has severely disrupted my personal responsibilities. Kindly treat this appeal as urgent.`,
+
+9:`Respected WhatsApp Authority,
+
+I request clarity on the reason behind suspension of ${num} and respectfully seek reinstatement after review.`,
+
+10:`Dear WhatsApp Legal & Support Team,
+
+I respectfully appeal the suspension of ${num}. I assure full compliance with all regulations and request a comprehensive review and restoration.`
+};
+
+document.getElementById("result").value=appeals[document.getElementById("template").value];
+}
+
+function sendMail(){
+let body=encodeURIComponent(document.getElementById("result").value);
+window.location.href="mailto:support@whatsapp.com?subject=Account Ban Appeal&body="+body;
+}
+
+function toggleMode(){
+document.body.classList.toggle("light");
+let icon=document.querySelector(".toggle");
+icon.textContent=document.body.classList.contains("light")?"☀":"🌙";
+}
+
+function openChannel1(){
+window.open("https://whatsapp.com/channel/0029Vb7etPJISTkK10tBNX22","_blank");
+}
+
+function openChannel2(){
+window.open("https://whatsapp.com/channel/0029VaSzzuf0bIdiM7lbY80U","_blank");
+}
+
+</script>
+
+</body>
+</html>
